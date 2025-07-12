@@ -4,6 +4,14 @@
   margin: 0;
 }
 
+:root {
+  --gap-key: 12px;
+  --padding-keypad: 4px;
+  --bg-main: #eae1d2;
+  --bg-gap-key: #7e7f87;
+  --round-key: 6px;
+}
+
 body {
   height: 100vh;
   display: flex;
@@ -11,13 +19,27 @@ body {
   align-items: center;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   cursor: ponter;
+  background-color: #372549;
 }
 
 #keys {
-  max-width: 400px;
+  width: auto;
   display: inherit;
   flex-direction: column;
-  gap: 1rem;
+  gap: var(--gap-key);
+  background-color: var(--bg-main);
+  padding: 4rem 1.5rem 3rem;
+  border-radius: var(--round-key);
+  box-shadow: 0 6px 6px #151111, 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+#keypad {
+  display: inherit;
+  flex-direction: column;
+  background-color: var(--bg-gap-key);
+  border-radius: var(--round-key);
+  gap: var(--gap-key);
+  padding: var(--padding-keypad);
 }
 
 kbd {
@@ -25,11 +47,17 @@ kbd {
   font-style: oblique;
 }
 
+.controls {
+  background-color: var(--bg-gap-key);
+  border-radius: var(--round-key);
+  padding: var(--padding-keypad);
+}
+
 .row,
 .controls {
   display: inherit;
   flex-direction: row;
-  gap: 1rem;
+  gap: var(--gap-key);
 }
 
 .key {
@@ -41,9 +69,9 @@ kbd {
   width: 100px;
   aspect-ratio: 1;
 
-  border-radius: 6px;
+  border-radius: var(--round-key);
 
-  background: linear-gradient(to bottom, #f7f7f7, #dcdcdc);
+  background: #f8f7ff;
   border: 1px solid #aaa;
 
   box-shadow: 0 4px 0 #999, 0 6px 10px rgba(0, 0, 0, 0.3);
@@ -69,13 +97,21 @@ kbd {
   justify-content: center;
   align-items: center;
   border-radius: 50%;
+  background: #cfdbd5;
 }
 
 .startButton img {
   padding-bottom: 4px;
 }
 
+.muteButton {
+  background: #e29578;
+}
+
+.lightButton {
+  background: #f4d35e;
+}
+
 .turnOff {
-  background: gray;
-  color: white;
+  background: rgb(212, 210, 210);
 }
