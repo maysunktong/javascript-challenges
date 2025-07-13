@@ -6,17 +6,17 @@ const snapAudio = document.querySelector(".snapSound");
 const indicatorLight = document.querySelector(".light-indicator");
 const message = document.querySelector(".message-box");
 const muteAudio = document.querySelector(".muteButton");
-muteAudio.muted = true;
+let isMuted = false;
 
 const lightButton = document.querySelector(".lightButton");
-const lightColors = ["default", "pink", "yellow"];
+const lightColors = ["pink", "yellow", "default"];
 let currentColorIndex = 0;
 
 const allKeys = document.querySelectorAll(".key");
 
 function playSound(e) {
   if (!playSoundEnabled) return;
-  if (!muteAudio.muted) return audio.muted;
+  if (isMuted) return;
 
   const key = document.querySelector(`div[data-key="${e.keyCode}"]`);
   const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
@@ -63,12 +63,12 @@ function startMachine(e) {
 
 function toggleMute(e) {
   if (e.code === "Digit3") {
-    muteAudio.muted = !muteAudio.muted;
+    isMuted = !isMuted;
 
-    if (muteAudio.muted) {
-      muteAudio.style.background = "";
-    } else {
+    if (isMuted) {
       muteAudio.style.background = "crimson";
+    } else {
+      muteAudio.style.background = "";
     }
   }
 }
