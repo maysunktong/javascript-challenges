@@ -16,10 +16,25 @@ body {
   height: 100vh;
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   cursor: ponter;
   background-color: #372549;
+}
+
+h1 {
+  font-size: 1.5rem;
+  padding: 1rem 0;
+  font-style: normal;
+  color: antiquewhite;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+footer {
+  padding: 1rem 0;
+  color: #989483;
+  font-size: 0.8rem;
 }
 
 #keys {
@@ -116,7 +131,7 @@ kbd {
 }
 
 .muteButton {
-  background: #4dddd6;
+  background-color: #4dddd6;
 }
 
 .lightButton {
@@ -124,7 +139,7 @@ kbd {
 }
 
 .turnOff {
-  background: #303030;
+  background-color: #303030;
   color: rgb(152, 154, 154);
 }
 

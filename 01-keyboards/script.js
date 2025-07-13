@@ -48,6 +48,7 @@ function startMachine(e) {
       indicatorLight.style.backgroundColor = "greenyellow";
       message.innerText = "On";
     } else {
+      muteAudio.style.backgroundColor = "";
       indicatorLight.style.backgroundColor = "crimson";
       message.innerText = "Off";
     }
@@ -66,9 +67,9 @@ function toggleMute(e) {
     isMuted = !isMuted;
 
     if (isMuted) {
-      muteAudio.style.background = "crimson";
+      muteAudio.style.backgroundColor = "crimson";
     } else {
-      muteAudio.style.background = "";
+      muteAudio.style.backgroundColor = "";
     }
   }
 }
