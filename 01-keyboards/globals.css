@@ -87,6 +87,17 @@ kbd {
   box-shadow: 0 1px 0 #999, 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
+/* change light colors */
+.key.pink {
+  background-color: pink;
+  box-shadow: 0 0 12px hotpink;
+}
+
+.key.yellow {
+  background-color: khaki;
+  box-shadow: 0 0 12px goldenrod;
+}
+
 .controls .key kbd {
   font-size: 0.5rem;
   text-align: center;
@@ -97,7 +108,7 @@ kbd {
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  background: #cfdbd5;
+  background: #eae1d2;
 }
 
 .startButton img {
@@ -105,7 +116,7 @@ kbd {
 }
 
 .muteButton {
-  background: #e29578;
+  background: #4dddd6;
 }
 
 .lightButton {
@@ -113,5 +124,29 @@ kbd {
 }
 
 .turnOff {
-  background: rgb(212, 210, 210);
+  background: #303030;
+  color: rgb(152, 154, 154);
+}
+
+/* Indicator box */
+.indicator-container {
+  display: inherit;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.light-indicator {
+  width: 24px;
+  height: 12px;
+  background-color: greenyellow;
+  border: 1px solid gainsboro;
+}
+
+.message-box {
+  width: 48px;
+  padding: 4px;
+  border-radius: var(--round-key);
+  background-color: var(--bg-gap-key);
+  color: white;
+  text-align: end;
 }
