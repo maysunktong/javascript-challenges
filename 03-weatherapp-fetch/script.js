@@ -2,7 +2,6 @@ const input = document.getElementById("searchBar");
 const searchButton = document.getElementById("searchButton");
 const displayData = document.getElementById("display");
 const currentLocation = document.getElementById("currentLocation");
-const popularCities = document.getElementById("popularCities");
 
 const API_KEY = "7aa2d007635637a4c0f76114b3985a56";
 
@@ -44,6 +43,8 @@ async function getWeatherData(lat = null, lon = null) {
     <img src="${iconUrl}" alt="${description}" class="bounce" />
     <button type="button" id="refreshButton">Refresh</button>`;
 
+    input.value = ""; /* clear input after a fetch */
+
     const refreshButton = document.getElementById("refreshButton");
     refreshButton.addEventListener("click", () => {
       getWeatherData(lat, lon);
@@ -63,7 +64,8 @@ function getCurrentLocation() {
       },
       (error) => {
         console.error(
-          "Location access denied or unavailable. Showing default city.", error
+          "Location access denied or unavailable. Showing default city.",
+          error
         );
         alert("Unable to get your location. Please enter a city name.");
       }
@@ -80,16 +82,19 @@ input.addEventListener("keydown", (e) => {
   }
 });
 
+const cities = Array.from(document.querySelectorAll(".city-btn"));
+cities.forEach((button) =>
+  button.addEventListener("click", (e) => {
+    const city = e.target.textContent;
+    input.value = city;
+    getWeatherData();
+  })
+);
+
 currentLocation.addEventListener("click", getCurrentLocation);
 searchButton.addEventListener("click", getWeatherData);
 
 /* Cities buttons */
-const cities = Array.from(document.querySelectorAll(".city-btn"));
-cities.forEach(button => button.addEventListener("click", (e) => {
-   const city = e.target.textContent;
-    input.value = city; 
-    getWeatherData(); 
-}))
 
 /* popularCities.addEventListener("click", (e) => {
   if (e.target.classList.contains("city-btn")) {
