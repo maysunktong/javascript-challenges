@@ -40,15 +40,10 @@ async function getWeatherData(lat = null, lon = null) {
     const iconUrl = `http://openweathermap.org/img/wn/${iconCode}@2x.png`;
 
     displayData.innerHTML = `${city} is ${description} today, with ${temp}°C temperature.
-    <img src="${iconUrl}" alt="${description}" class="bounce" />
-    <button type="button" id="refreshButton">Refresh</button>`;
+    <img src="${iconUrl}" alt="${description}" class="bounce" />`;
 
     input.value = ""; /* clear input after a fetch */
 
-    const refreshButton = document.getElementById("refreshButton");
-    refreshButton.addEventListener("click", () => {
-      getWeatherData(lat, lon);
-    });
   } catch (error) {
     console.error(error);
     displayData.innerHTML = `Error: ${error.message}`;
