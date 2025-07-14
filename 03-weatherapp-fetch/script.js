@@ -85,7 +85,7 @@ input.addEventListener("keydown", (e) => {
 const cities = Array.from(document.querySelectorAll(".city-btn"));
 cities.forEach((button) =>
   button.addEventListener("click", (e) => {
-    const city = e.target.textContent;
+    const city = e.target.textContent.toLowerCase();
     input.value = city;
     getWeatherData();
   })

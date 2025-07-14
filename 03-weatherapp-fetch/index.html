@@ -9,15 +9,38 @@
   </head>
   <body>
     <h1>Daily Weather</h1>
-    <input type="text" id="searchBar" placeholder="Search a place" />
-    <button type="button" id="searchButton">Search</button>
-    <button type="button" id="currentLocation">Current Location</button>
-    <div id="popularCities">
-      <button type="button" class="city-btn">London</button>
-      <button type="button" class="city-btn">New York</button>
-      <button type="button" class="city-btn">Tokyo</button>
-      <button type="button" class="city-btn">Paris</button>
-      <button type="button" class="city-btn">Sydney</button>
+    <div class="main-container">
+      <header>
+        <img src="./assets/location.png" alt="" width="32" />
+        <span>Search location</span>
+      </header>
+      <div class="search-container">
+        <input
+          type="text"
+          id="searchBar"
+          placeholder="Enter city name or current location..."
+        />
+        <div>
+          <img src="./assets/search.png" alt="" width="16" id="searchButton" />
+          <span>Search</span>
+        </div>
+        <div>
+          <img
+            src="./assets/navigation.png"
+            alt=""
+            width="16"
+            id="currentLocation"
+          />
+        </div>
+      </div>
+
+      <div id="popularCities">
+        <button type="button" class="city-btn">Bangkok</button>
+        <button type="button" class="city-btn">New York</button>
+        <button type="button" class="city-btn">Tokyo</button>
+        <button type="button" class="city-btn">Stockholm</button>
+        <button type="button" class="city-btn">Sydney</button>
+      </div>
     </div>
 
     <div id="display"></div>
