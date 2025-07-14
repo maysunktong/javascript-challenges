@@ -120,7 +120,7 @@ header img {
 
 /* Display container for weather info */
 #display {
-  max-width: 480px;
+  max-width: 600px;
   margin: 0 auto;
   background: #fff;
   padding: 25px 20px;
@@ -165,4 +165,11 @@ header img {
   100% {
     transform: rotate(360deg);
   }
+}
+
+footer {
+  font-size: 0.7rem;
+  color: #555;
+  text-align: center;
+  padding: 2rem 0;
 }
