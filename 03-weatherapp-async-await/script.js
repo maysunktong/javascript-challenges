@@ -59,7 +59,7 @@ function getCurrentLocation() {
       },
       (error) => {
         console.error(
-          "Location access denied or unavailable. Showing default city.",
+          "Location access denied or unavailable",
           error
         );
         alert("Unable to get your location. Please enter a city name.");
