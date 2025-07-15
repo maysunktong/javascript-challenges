@@ -4,3 +4,4 @@ https://js-soundboard.vercel.app/
 
 03 - Weather App with Current Location 
 https://js-weather-async.vercel.app/
+<img width="1165" height="663" alt="image" src="https://github.com/user-attachments/assets/b86ed365-c579-486e-bdb8-b8a7d7e5e504" />
