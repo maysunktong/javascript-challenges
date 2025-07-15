@@ -51,6 +51,7 @@ async function getNewsData() {
     display.innerHTML = `Found ${data.totalResults}articles related to keyword '${searchKeyword}':
     ${articles}`;
     
+    searchbar.value = ""
   } catch (error) {
     console.error(error.message);
     display.innerHTML = `Error: ${error.message}`;
